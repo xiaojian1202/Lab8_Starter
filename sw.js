@@ -52,7 +52,7 @@ self.addEventListener('fetch', function (event) {
         cache.put(event.request, fetchedResponse.clone());
         return fetchedResponse;
       });
-    });
+    })
   }));
   // B8. TODO - If the request is in the cache, return with the cached version.
   //            Otherwise fetch the resource, add it to the cache, and return

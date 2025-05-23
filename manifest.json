@@ -1,8 +1,8 @@
 {
     "name": "Lab8_Starter",
     "short_name": "Xiao Chen",
-    "description": "",
-    "start_url": "",
+    "description": "PWA for lab8",
+    "start_url": ".",
     "display": "browser",
     "background_color": "",
     "theme_color": "",
@@ -30,8 +30,6 @@
         "sizes": "512x512",
         "type": "image/png"
       }
-
-      
     ]
   }
   

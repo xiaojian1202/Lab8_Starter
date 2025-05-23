@@ -56,10 +56,6 @@ function initializeServiceWorker() {
           if (registration.active) {
             console.log("Service Worker registered successfully");
           }
-
-          if (registration.fetch) {
-            console.log("Service Worker is active");
-          }
         }
           catch(error) {
             console.error("Failed");
