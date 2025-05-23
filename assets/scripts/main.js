@@ -48,18 +48,25 @@ function initializeServiceWorker() {
   const registerSW = async () => {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", async () => {
-        const registration = await navigator.serviceWorker.register("./sw.js");
+        try {
+          const registration = await navigator.serviceWorker.register("./sw.js", {scope: "/"});
+          if (registration.installing) {
+            console.log("Service worker installing");
+          }
+          if (registration.active) {
+            console.log("Service Worker registered successfully");
+          }
 
-        if (registration) {
-          console.log("Successful");
+          if (registration.fetch) {
+            console.log("Service Worker is active");
+          }
         }
-
-        else {
-          console.log("Failed");
-        }
+          catch(error) {
+            console.error("Failed");
+          }
       })
-    }
-  }
+    };
+  };
   // B2. TODO - Listen for the 'load' event on the window object.
   // Steps B3-B6 will be *inside* the event listener's function created in B2
   // B3. TODO - Register './sw.js' as a service worker (The MDN article
@@ -69,6 +76,7 @@ function initializeServiceWorker() {
   // B5. TODO - In the event that the service worker registration fails, console
   //            log that it has failed.
   // STEPS B6 ONWARDS WILL BE IN /sw.js
+  registerSW();
 }
 
 /**
