@@ -49,7 +49,10 @@ self.addEventListener('fetch', function (event) {
       }
 
       return fetch(event.request).then((fetchedResponse) => {
-        cache.put(event.request, fetchedResponse.clone());
+        if (event.request.url.startsWith('http')) {
+          cache.put(event.request, fetchedResponse.clone());
+        }
+        
         return fetchedResponse;
       });
     })

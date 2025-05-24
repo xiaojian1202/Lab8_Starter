@@ -1,11 +1,11 @@
 {
     "name": "Lab8_Starter",
-    "short_name": "Xiao Chen",
+    "short_name": "xiaojian1202",
     "description": "PWA for lab8",
-    "start_url": ".",
-    "display": "browser",
-    "background_color": "",
-    "theme_color": "",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "blue",
+    "theme_color": "lightblue",
     "icons": [
       {
         "src": "/assets/images/icons/icon-192x192.png",
@@ -31,5 +31,5 @@
         "type": "image/png"
       }
     ]
-  }
+}
   
